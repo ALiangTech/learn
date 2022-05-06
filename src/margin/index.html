@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-size: 0;
+        }
+        .border div {
+            display: inline-block;
+            border: 1px solid blue;
+        }
+        .test1 {
+            background-color: red;
+            font-size: 12px;
+        }
+        .test {
+            margin-left: -10px;
+            background-color: skyblue;
+            font-size: 12px;
+        }
+        .test3 {
+            background-color: skyblue;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <!-- marign 取负值 -->
+    <div class="border">
+        <div class="test1">test</div>
+        <div class="test">test2</div>
+    </div>
+    <div style="font-size: 12px;">原始的如下</div>
+    <div class="border">
+        <div class="test1">test</div>
+        <div class="test3">test2</div>
+    </div>
+</body>
+</html>
