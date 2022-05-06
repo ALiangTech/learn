@@ -1,27 +1,22 @@
 function quickSort(data = []) {
-    const dataLen = data.length - 1;
-    if(dataLen > 1) {
-        const baseIndex = Math.floor(dataLen / 2)
-        const base = data[baseIndex]
-        console.log(base, "base")
-        let left = [];
-        let right = [];
-        for(let i = 0; i < dataLen; i++) {
-            if( data[i] < base) {
-                left.push(data[i])
-            }else {
-                right.push(data[i])
-            }
-        }
-        left.push(base)
-        left = quickSort(left)
-        right = quickSort(right)
-        console.log(left, 'left')
-        console.log(right, 'right')
+    if(data.length < 2) {
+        return data
     }
-    return data
+    const dataLen = data.length - 2;
+    const baseIndex = Math.floor(dataLen / 2)
+    const base = data.splice(baseIndex, 1)[0]
+    let left = [];
+    let right = [];
+    for (let i = 0; i <= dataLen; i++) {
+        if (data[i] >= base) {
+            right.push(data[i])
+        } else {
+            left.push(data[i])
+        }
+    }
+    return quickSort(left).concat([base, ...quickSort(right)])
 }
-
-const test = [2,3,45,6,9,3,5,6]
+// 分治法 + 递归
+const test = [2, 33, 45, 62, 93, 31, 55, 6,1]
 const datatest = quickSort(test)
 console.log(datatest, "Tes")
